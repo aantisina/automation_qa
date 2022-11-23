@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import static lv.acodemy.constants.Generic.GOOGLE_URL;
+
 public class TestChrome {
 
     ChromeDriver driver = new ChromeDriver();
@@ -18,8 +20,7 @@ public class TestChrome {
 
     @Test
     public void chromeTest() {
-        driver.get("https://google.lv");
-
+        driver.get(GOOGLE_URL);
         WebElement acceptButton = driver.findElement(By.xpath("//button//div[contains(text(), 'Accept all')]"));
         acceptButton.click();
 
