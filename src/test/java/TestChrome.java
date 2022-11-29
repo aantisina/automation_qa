@@ -14,7 +14,6 @@ public class TestChrome {
     ChromeDriver driver;
 
     @BeforeMethod
-
     public void before() {
         driver = new ChromeDriver();
     }
