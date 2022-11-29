@@ -27,7 +27,7 @@ public class TestSauceDemo {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
 
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.get(SAUCE_URL);
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
