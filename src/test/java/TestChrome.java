@@ -4,13 +4,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static lv.acodemy.constants.Generic.GOOGLE_URL;
 
 public class TestChrome {
 
-    ChromeDriver driver = new ChromeDriver();
+    ChromeDriver driver;
+
+    @BeforeMethod
+
+    public void before() {
+        driver = new ChromeDriver();
+    }
 
     @AfterMethod
     public void teardown() {
@@ -18,7 +25,7 @@ public class TestChrome {
         driver.quit();
     }
 
-    @Test
+    @Test(enabled = false)
     public void chromeTest() {
         driver.get(GOOGLE_URL);
         WebElement acceptButton = driver.findElement(By.xpath("//button//div[contains(text(), 'Accept all')]"));
